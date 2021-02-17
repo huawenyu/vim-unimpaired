@@ -288,6 +288,35 @@ call s:map('n', '[o+', ':set cursorline cursorcolumn<CR>')
 call s:map('n', ']o+', ':set nocursorline nocursorcolumn<CR>')
 call s:map('n', 'yo+', ':set <C-R>=<SID>cursor_options()<CR><CR>')
 
+call s:map('n', '[oC', ':set signcolumn=yes <bar> set list <CR>')
+call s:map('n', ']oC', ':set signcolumn=no  <bar> set nolist <bar> set nonumber <CR>')
+
+call s:map('n', '[oS', ':set signcolumn=yes<CR>')
+call s:map('n', ']oS', ':set signcolumn=no<CR>')
+
+Shortcut! [oc    Option cursorline
+Shortcut! ]oc    Option !cursorline
+Shortcut! [ov    Option virtualedit
+Shortcut! ]ov    Option !virtualedit
+Shortcut! [ow    Option wrap
+Shortcut! ]ow    Option !wrap
+Shortcut! [os    Option spell
+Shortcut! ]os    Option !spell
+Shortcut! [oS    Option signcolumn
+Shortcut! ]oS    Option !signcolumn
+Shortcut! [oC    Option copy-mode
+Shortcut! ]oC    Option !copy-mode
+Shortcut! [oh    Option hlsearch
+Shortcut! ]oh    Option !hlsearch
+Shortcut! [oi    Option ignorecase
+Shortcut! ]oi    Option !ignorecase
+Shortcut! [ol    Option list
+Shortcut! ]ol    Option !list
+Shortcut! [on    Option number
+Shortcut! ]on    Option !number
+Shortcut! [or    Option relativenumber
+Shortcut! ]or    Option !relativenumber
+
 function! s:legacy_option_map(letter) abort
   let y = get(get(g:, 'nremap', {}), 'y', 'y')
   return y . 'o' . a:letter . ':echo "Use ' . y . 'o' . a:letter . ' instead"' . "\<CR>"
